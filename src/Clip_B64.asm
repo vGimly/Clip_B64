@@ -17,7 +17,7 @@ struc myData
 }
 
 virtual at esi
-	m myData
+m myData
 end virtual
 
 section '.text' code readable executable
@@ -58,7 +58,6 @@ go_ret:	pop ebp edi esi
 ;	ret
 
 ;section '.data' data readable writeable
-
 section '.idata' import data readable writeable
 library kernel32,'KERNEL32.DLL',\
 	  user32,'USER32.DLL',\
@@ -68,10 +67,8 @@ library kernel32,'KERNEL32.DLL',\
 include 'api\user32.inc'
 uh:
 
-import shell32,\
-	CommandLineToArgvW,'CommandLineToArgvW'
-import crypt32,\
-	CryptBinaryToStringA,'CryptBinaryToStringA'
+import shell32,CommandLineToArgvW,'CommandLineToArgvW'
+import crypt32,CryptBinaryToStringA,'CryptBinaryToStringA'
 
 Md myData
 
